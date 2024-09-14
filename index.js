@@ -79,9 +79,11 @@ app.post('/api/generate-payment-url', async (req, res) => {
             res.status(500).json({ message: 'Invalid response from payment gateway' });
         }
     } catch (error) {
+        console.error('Error generating payment URL:', error); // Log the error for debugging
         res.status(500).json({ message: 'Payment request failed', error: error.message });
     }
 });
+
 
 // Start the server
 app.listen(port, () => {
