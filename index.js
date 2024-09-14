@@ -35,6 +35,12 @@ app.post('/data', (req, res) => {
     }
 });
 
+app.get('/' , (req,res) => {
+
+    res.send('Welcome to the City Heart API!')
+
+})
+
 // Start the server
 app.listen(port, () => {
     console.log(`API running on http://localhost:${port}`);
