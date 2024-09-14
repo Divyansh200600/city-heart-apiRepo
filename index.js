@@ -12,24 +12,14 @@ app.get('/api/get-amount', (req, res) => {
     res.json(data);
 });
 
-app.get('/data/:id', (req, res) => {
-    const id = parseInt(req.params.id, 10);
-    const item = data.find(d => d.id === id);
 
-    if (item) {
-        recentData = item; // Update recentData with the fetched item
-        res.json(item);
-    } else {
-        res.status(404).json({ message: 'Data not found' });
-    }
-});
 
 // Route to add new data
 app.post('/api/get-amount', (req, res) => {
     const newItem = req.body;
 
     // Ensure that each item has an 'id' and 'name'
-    if (newItem.id && newItem.name) {
+    if (newItem.amount && newItem.name) {
         data.push(newItem);
         recentData = newItem; // Update recentData with the newly added item
         res.status(201).json(newItem);
