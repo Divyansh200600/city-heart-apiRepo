@@ -19,7 +19,7 @@ app.post('/api/get-amount', (req, res) => {
     const newItem = req.body;
 
     // Ensure that each item has an 'id' and 'name'
-    if (newItem.amount && newItem.name) {
+    if (newItem.amount) {
         data.push(newItem);
         recentData = newItem; // Update recentData with the newly added item
         res.status(201).json(newItem);
