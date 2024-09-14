@@ -8,7 +8,7 @@ app.use(express.json());
 let data = [];
 let recentData = null; // Variable to store the most recent data
 
-app.get('/data', (req, res) => {
+app.get('/api/get-amount', (req, res) => {
     res.json(data);
 });
 
@@ -25,7 +25,7 @@ app.get('/data/:id', (req, res) => {
 });
 
 // Route to add new data
-app.post('/data', (req, res) => {
+app.post('/api/get-amount', (req, res) => {
     const newItem = req.body;
 
     // Ensure that each item has an 'id' and 'name'
